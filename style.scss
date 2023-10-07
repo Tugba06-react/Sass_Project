@@ -1,0 +1,262 @@
+@import "./flex";
+@import "./modules";
+@import "./color";
+@import "./reponsive";
+@import "./button";
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+//NAV START
+
+nav .container{
+    @include flex1;
+    @extend %nav;
+}
+.navbar{
+    display: flex;
+    gap: 10px;
+    font-size: 20px; 
+    & a{
+        @extend %a;
+    }
+}
+
+//NAV END
+
+//!SECTION INFO START
+.section{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 99%;
+    height: 100%;
+
+    .css{
+        @include flex2;
+        gap: 10px;
+        @extend %sectionInfo;
+        border-radius: 10px;
+        z-index: 2;
+    .img{
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .text{
+        flex: 1;
+        text-align: center;
+        h3{
+            color:$primary-color;
+            font-size: 25px;
+        }
+        p{
+            @extend %a;
+            font-size: 18px;
+        }
+    }
+
+}
+.vs{
+    text-align: center;
+    color: $text-color;
+    font-size: 35px;
+    span{
+        color: $primary-color;
+    }
+}
+
+.sass{
+    @include flex2;
+    @extend %sectionInfo;
+    border-radius: 10px;
+    flex-direction: row-reverse;
+    z-index: 2;
+    .img{
+        display: flex;
+        justify-content: center;
+        flex-basis: 48%;
+    }
+
+    .text{
+        flex-basis: 55%;
+        text-align: center;
+        h3{
+            color:$text-color;
+            font-size: 25px;
+        }
+        p{
+            @extend %a;
+            font-size: 18px;
+        }
+    }
+}
+}
+//!SECTION INFO END
+
+// INFO SECTION START
+.info-container{
+    margin: 20px 0 ;
+    .container{
+        height: 500px;
+        width: 100%;
+        background-color: #D9AFD9;
+        background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+        border-radius: 10px;
+        @include flex1;
+        @include mobile{
+            flex-direction: column
+        };
+
+        .info-sec{
+            text-align: center;
+            h1{
+                color: #364a5e;
+            }
+            p{
+                color: white;
+                margin: 20px 0;
+            }
+            .btn{
+                @include button;
+            }
+        }
+
+    }
+}
+
+// INFO SECTION END
+
+//!FORM START
+
+.form-container {
+    width: 100%;
+    height: 90vh;
+    .form-area{
+        @include flex1;
+        height: 100%;
+        width: 100%;
+        .img{
+            display: flex;
+            flex-direction: column;
+
+            img{
+                width: 150px;
+                
+            }
+
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: end;
+            width: 50%;
+            
+            input{
+                padding: 5px 0;
+                border-radius: 5px;
+                border: 1px solid gray;
+                text-align: end;
+            }
+            .btn{
+                text-align: center;
+                margin-top: 30px;
+                
+                button{
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    background-color: #00DBDE;
+                    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+                    color: white;
+                    font-size: 30px;
+                }
+
+            }
+    }
+    }
+ }
+ //!FORM END
+
+ //FOOTER START
+footer{
+    background-color: #364a5e;
+    width: 100%;
+    .footer-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .footer-sec1{
+            @include flex1;
+            width: 80%;
+            height: 200px;
+            border-bottom: 1px solid black;
+            .time{
+                & p {
+                    font-size: 18px;
+                    & i{
+                        color: white;
+                    font-size: 30px;
+                    }
+                    
+                };
+            }
+            .phone{
+               & h1{
+                font-size: 25px;
+                & i{
+                    color: white;
+                    font-size: 30px;
+                }
+               }
+            }   
+            }
+    }
+    .footer-sec2{
+        width: 90%;
+        @include flex2;
+
+        .social-media{
+            line-height: 25px;
+            p{
+                white-space: nowrap;
+                span{
+                    color: white;
+                }
+            }
+
+        
+        }
+        .logo{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            & i{
+                color: white;
+                font-size: 20px;
+            }
+            }
+
+         .img{
+            img{
+                width: 100px;
+            }
+         }
+    }
+
+
+}
+ //FOOTER END
